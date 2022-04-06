@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+       xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+    <bean class="com.bean.Batch" id="Batch">
+        <constructor-arg name="courseName" value="Java"/>
+        <constructor-arg name="batchCode" value="JV1"/>
+        <constructor-arg>
+            <list>
+            <bean class="com.bean.Student">
+                <constructor-arg name="sName" value="Prathamesh"/>
+                <constructor-arg name="qualification" value="B.E"/>
+                <constructor-arg name="aggregatePercent" value="80"/>
+            </bean>
+                <bean class="com.bean.Student">
+                    <constructor-arg name="sName" value="Akshay"/>
+                    <constructor-arg name="qualification" value="B.Tech"/>
+                    <constructor-arg name="aggregatePercent" value="83"/>
+                </bean>
+                <bean class="com.bean.Student">
+                    <constructor-arg name="sName" value="Anksuh"/>
+                    <constructor-arg name="qualification" value="B.E"/>
+                    <constructor-arg name="aggregatePercent" value="93"/>
+                </bean>
+            </list>
+        </constructor-arg>
+    </bean>
+</beans>
