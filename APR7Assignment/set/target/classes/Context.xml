@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.w3.org/2001/XMLSchema"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="movie_1" class="com.bean.Movie">
+        <constructor-arg name="id" value="1"/>
+        <constructor-arg name="name" value="Zid"/>
+    </bean>
+    <bean id="movie_2" class="com.bean.Movie" >
+        <constructor-arg name="id" value="2"/>
+        <constructor-arg name="name" value="Kashmir_Files"/>
+        <!--        <property name="add" ref="a1"/>-->
+    </bean>
+    <bean id="director_1" class="com.bean.Director">
+        <property name="id" value="1"/>
+        <property name="name" value="Vivek_Agnihotri"/>
+        <property name="movies">
+            <set>
+                <ref bean="movie_1"/>
+                <ref bean="movie_2"/>
+            </set>
+        </property>
+
+    </bean>
+
+</beans>
